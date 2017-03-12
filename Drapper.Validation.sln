@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drapper.Validation", "Drapper.Validation\Drapper.Validation.csproj", "{F72EEB59-74AC-40F2-B96C-7ACC7B42B9E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drapper.Validation", "Drapper.Validation\Drapper.Validation.csproj", "{0C9FC12F-853D-40CF-9F88-F57F47848161}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drapper.Validation.Tests", "Drapper.Validation.Tests\Drapper.Validation.Tests.csproj", "{8CEC6721-AF2D-42A5-BCCE-D824578688F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drapper.Validation.Tests", "Drapper.Validation.Tests\Drapper.Validation.Tests.csproj", "{2601A6AA-A97A-4669-81A1-6A0A39D46444}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellaneous", "{AD4B5EE6-8DCC-4117-9E8B-11F1885EFD73}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8862F37E-713A-4E40-841A-E3B639861967}"
 	ProjectSection(SolutionItems) = preProject
-		.gitattributes = .gitattributes
-		.gitignore = .gitignore
-		.travis.yml = .travis.yml
-		License.txt = License.txt
+		.nuget\Drapper.Validation.nuspec = .nuget\Drapper.Validation.nuspec
+		.nuget\nuget.exe = .nuget\nuget.exe
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellaneous", "{88DFDEA7-2F2C-45E0-A956-48B5F9F4BC0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +21,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F72EEB59-74AC-40F2-B96C-7ACC7B42B9E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F72EEB59-74AC-40F2-B96C-7ACC7B42B9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F72EEB59-74AC-40F2-B96C-7ACC7B42B9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F72EEB59-74AC-40F2-B96C-7ACC7B42B9E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8CEC6721-AF2D-42A5-BCCE-D824578688F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CEC6721-AF2D-42A5-BCCE-D824578688F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CEC6721-AF2D-42A5-BCCE-D824578688F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CEC6721-AF2D-42A5-BCCE-D824578688F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C9FC12F-853D-40CF-9F88-F57F47848161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C9FC12F-853D-40CF-9F88-F57F47848161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C9FC12F-853D-40CF-9F88-F57F47848161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C9FC12F-853D-40CF-9F88-F57F47848161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2601A6AA-A97A-4669-81A1-6A0A39D46444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2601A6AA-A97A-4669-81A1-6A0A39D46444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2601A6AA-A97A-4669-81A1-6A0A39D46444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2601A6AA-A97A-4669-81A1-6A0A39D46444}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

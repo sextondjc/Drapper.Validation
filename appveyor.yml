@@ -1,0 +1,17 @@
+version: 1.1.0.{build}
+image: Visual Studio 2017
+configuration: Release
+before_build:
+- cmd: nuget restore
+build:
+  verbosity: normal
+environment:
+    COVERALLS_REPO_TOKEN:  
+       secure: 35Nblb+hjU7YiRCjME8M8KMsdMROySBgPaRyj+ya1H+CcRRdhbabY7TTK/pua8f1
+test_script:
+- ps: >-
+    # .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:xunit.console.clr4.exe "-targetargs:""Drapper.Validation.Tests\bin\$env:CONFIGURATION\Drapper.Validation.Tests.dll"" /noshadow /appveyor" -filter:"+[*]*" -output:opencoverCoverage.xml
+
+    $coveralls = (Resolve-Path "packages/coveralls.net.*/tools/csmacnz.coveralls.exe").ToString()
+
+    & $coveralls --opencover -i opencoverCoverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_JOB_ID

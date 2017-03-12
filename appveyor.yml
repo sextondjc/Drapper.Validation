@@ -4,6 +4,7 @@ configuration: Release
 before_build:
 - cmd: nuget restore
 build:
+  project: Drapper.Validation.sln
   verbosity: normal
 environment:
     COVERALLS_REPO_TOKEN:  

@@ -8,6 +8,7 @@ using System;
 using Xunit;
 using static Drapper.Validation.Contract;
 using static Xunit.Assert;
+
 namespace Drapper.Validation.Tests.ContractTests
 {    
     public class Require
@@ -16,7 +17,7 @@ namespace Drapper.Validation.Tests.ContractTests
         public void ValidConditionWillNotThrowAnException()
         {
             var condition = true;
-            Require(condition, "Validation test");
+            Require(condition, "Validation test");            
         }
 
         [Fact]        

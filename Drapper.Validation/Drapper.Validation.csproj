@@ -67,12 +67,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)bin\$(Configuration)\Drapper.Validation.dll" "$(SolutionDir).nuget\lib\net461\Drapper.Validation.dll"
-$(SolutionDir).nuget\nuget.exe pack $(SolutionDir).nuget\Drapper.Validation.nuspec
-move "$(ProjectDir)bin\$(Configuration)\Drapper.Validation.*.nupkg" "$(SolutionDir).nuget\"
-copy "$(SolutionDir).nuget\Drapper.Validation.*.nupkg" "C:\Nuget\"</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -11,7 +11,7 @@ environment:
        secure: 35Nblb+hjU7YiRCjME8M8KMsdMROySBgPaRyj+ya1H+CcRRdhbabY7TTK/pua8f1
 test_script:
 - ps: >-
-    # .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:xunit.console.clr4.exe "-targetargs:""Drapper.Validation.Tests\bin\$env:CONFIGURATION\Drapper.Validation.Tests.dll"" /noshadow /appveyor" -filter:"+[*]*" -output:opencoverCoverage.xml
+    # .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:xunit.console.clr4.exe "-targetargs:""Drapper.Validation.Tests\bin\$env:CONFIGURATION\Drapper.Validation.Tests.dll"" /noshadow /appveyor" -filter:"+[.Validation*]*" -output:opencoverCoverage.xml
 
     $coveralls = (Resolve-Path "packages/coveralls.net.*/tools/csmacnz.coveralls.exe").ToString()
 

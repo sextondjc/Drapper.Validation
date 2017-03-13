@@ -2,3 +2,20 @@
 
 language: csharp
 solution: Drapper.Validation.sln
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "huKjyYYZgy0LeCCNddE2iL3Y1iQ3k/cF21Tq/rSFkb1yIYSzqClXUreULARHAfvSJIvOfAw48pOu1TOoiUSeFPgeT91a2y3SYfkQlsE7gdNUVxofaChhLnqEUc4imkCYMXSI+7wifz7s+CZl0DXb4mO3hma7W9NX59LxTTL5zPLjSKrMW/GNAbTW1fh+gWA25a7MYQvIIwTcGBTml81ZQzuYLqxoFCp2kX2Fj/3VV+z92rC2ep7ElCM8SWZAe406ZBvRb8iZv1Iz7BcMFjVmbB3o+B6tzr9o/Eq17JEZhzAR4u2HAmXvijKMLF9enz98Ivr/lPfmQijx0W4dkOEBux2GgKDS9ihvwW1lJgt09qzYO3Lopjc+B/Qn1bni5BHch4xzhSvwJ1DdUik7bkVgEkwzhMg/JxAnrJjN1hk8B8fB7ovSr7EOhZY0NOwodwh8mzdAvDdFHb3j3T3jxTCHTLEViJ5cHQAnZHO6bcaPeKJdB7chsVQLfT4YWdzDDssOQkO2wxjoEQdEi8R9zbWRxdijraT1vvo019NI7SlZfGpGHdZl+4hdiRfnRqikHlbJbZT6FVdycFZpRmGJZu5vPlvHjHgjdSmTkh7eeciHttN0w4SMJRmuLhKVJ81OBlKp7v6iTlgeWerDIN+2GQw2xW2bSHNj3hsL9PI67YIAkYo="
+
+before_install:
+      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+addons:
+  coverity_scan:
+    project:
+      name: "sextondjc/Drapper.Validation"
+      description: "Simple precondition library with a couple of extras."
+    notification_email: david@sextondjc.com    
+    branch_pattern: coverity_scan

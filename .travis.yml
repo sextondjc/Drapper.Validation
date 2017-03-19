@@ -17,5 +17,4 @@ addons:
     project:
       name: "sextondjc/Drapper.Validation"
       description: "Simple precondition library with a couple of extras."
-    notification_email: david@sextondjc.com    
-    branch_pattern: coverity_scan
+    notification_email: david@sextondjc.com

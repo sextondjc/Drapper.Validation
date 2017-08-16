@@ -1,4 +1,4 @@
-version: 1.1.0.{build}
+version: 2.0.0.{build}
 image: Visual Studio 2017
 configuration: Release
 before_build:
@@ -7,6 +7,10 @@ build:
   project: Drapper.Validation.sln
   verbosity: normal
 environment:
+    matrix:
+        - CLI_VERSION: 1.0.1
+        - CLI_VERSION: 2.0.0
+        - CLI_VERSION: Latest
     COVERALLS_REPO_TOKEN:  
        secure: 35Nblb+hjU7YiRCjME8M8KMsdMROySBgPaRyj+ya1H+CcRRdhbabY7TTK/pua8f1
 test_script:

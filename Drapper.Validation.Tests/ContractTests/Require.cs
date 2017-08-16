@@ -17,13 +17,13 @@ namespace Drapper.Validation.Tests.ContractTests
         public void ValidConditionWillNotThrowAnException()
         {
             var condition = true;
-            Require(condition, "Validation test");            
+            Require<Exception>(condition, "Validation test");
         }
 
         [Fact]        
         public void InvalidConditionThrowsArgumentException()
         {
-            var exception = Throws<ArgumentException>(() => Require(false, "Validation test"));
+            var exception = Throws<ArgumentException>(() => Require<ArgumentException>(false, "Validation test"));
             Equal("Validation test", exception.Message);
             Null(exception.InnerException);
         }

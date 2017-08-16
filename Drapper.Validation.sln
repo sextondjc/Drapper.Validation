@@ -1,19 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drapper.Validation", "Drapper.Validation\Drapper.Validation.csproj", "{0C9FC12F-853D-40CF-9F88-F57F47848161}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drapper.Validation", "Drapper.Validation\Drapper.Validation.csproj", "{0C9FC12F-853D-40CF-9F88-F57F47848161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drapper.Validation.Tests", "Drapper.Validation.Tests\Drapper.Validation.Tests.csproj", "{2601A6AA-A97A-4669-81A1-6A0A39D46444}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8862F37E-713A-4E40-841A-E3B639861967}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\Drapper.Validation.nuspec = .nuget\Drapper.Validation.nuspec
-		.nuget\nuget.exe = .nuget\nuget.exe
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellaneous", "{88DFDEA7-2F2C-45E0-A956-48B5F9F4BC0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drapper.Validation.Tests", "Drapper.Validation.Tests\Drapper.Validation.Tests.csproj", "{2601A6AA-A97A-4669-81A1-6A0A39D46444}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEA0ADD8-7B41-4913-8294-B9E5B19C2CAD}
 	EndGlobalSection
 EndGlobal

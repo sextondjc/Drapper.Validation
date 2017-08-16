@@ -12,16 +12,7 @@ namespace Drapper.Validation
     /// A simple precondition checker. Useful for validating method arguments. 
     /// </summary>
     public class Contract
-    {
-        [Obsolete("This method will be removed in the next major release. Please use Require<T> for new development.")]
-        public static void Require(bool condition, string message, params object[] args)
-        {
-            if (!condition)
-            {
-                throw new ArgumentException(string.Format(message, args));
-            }
-        }
-
+    {       
         /// <summary>
         /// Evaluates the supplied condition and throws exception on failure. 
         /// </summary>

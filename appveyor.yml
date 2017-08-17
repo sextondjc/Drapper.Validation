@@ -20,7 +20,7 @@ build_script:
   - ps: mkdir "test\test-dotnet-new" -Force | Push-Location
   #- ps: dotnet new console -lang f#
   - ps: dotnet restore
-  - ps: dotnet build
+  - ps: dotnet build .\Drapper.Validation.sln
   #- ps: dotnet run a b
   - ps: Pop-Location
 

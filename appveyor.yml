@@ -19,6 +19,6 @@ build_script:
   - ps: dotnet restore
   - ps: dotnet build .\Drapper.Validation.sln
   - ps: dotnet test .\Drapper.Validation.Tests\Drapper.Validation.Tests.csproj  
-  - ps: Pop-Location
+  #- ps: Pop-Location
 
 version: 2.0.1.{build}

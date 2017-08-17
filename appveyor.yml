@@ -18,12 +18,15 @@ build_script:
   - ps: dotnet --info
   # Run dotnet new 
   - ps: mkdir "test\test-dotnet-new" -Force | Push-Location
-  - ps: dotnet new console -lang f#
+  #- ps: dotnet new console -lang f#
   - ps: dotnet restore
   - ps: dotnet build
-  - ps: dotnet run a b
+  #- ps: dotnet run a b
   - ps: Pop-Location
 
 
-test: off 
+test: 
+  assemblies:
+    only:
+    - Drapper.Validation.Tests.dll 
 version: 2.0.1.{build}

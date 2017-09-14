@@ -7,6 +7,7 @@
 using System;
 using System.Collections;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using static Drapper.Validation.Contract;
 
 namespace Drapper.Validation.Attributes
@@ -18,25 +19,20 @@ namespace Drapper.Validation.Attributes
 
         public RequiredCollectionAttribute(int minimumCount)
         {
-            this.MinimumCount = minimumCount;
+            MinimumCount = minimumCount;
         }
 
         public RequiredCollectionAttribute(int minimumCount, int maximumCount):this(minimumCount)
         {
-            this.MaximumCount = maximumCount;
+            MaximumCount = maximumCount;
         }
         
         public override bool IsValid(object value)
-        {
-            var result = true;
+        {            
             Require<ArgumentNullException>(value != null, "The object passed to the attribute was null.");            
 
             // cast to IEnumerable & get length
-            var length = 0;
-            foreach (var item in ((IEnumerable)value))
-            {
-                length++;
-            }
+            var length = ((IEnumerable) value).Cast<object>().Count();
 
             if (length < MinimumCount)
             {
@@ -46,16 +42,10 @@ namespace Drapper.Validation.Attributes
             }
 
             // max length is allowed to be zero. 
-            if (MaximumCount != 0)
-            {
-                if (length > MaximumCount)
-                {
-                    ErrorMessage = $"The collection length of {length} is greated than the maximum required of {MaximumCount}";
-                    return false;
-                }
-            }
-
-            return result;
+            if (MaximumCount == 0) return true;
+            if (length <= MaximumCount) return true;
+            ErrorMessage = $"The collection length of {length} is greated than the maximum required of {MaximumCount}";
+            return false;
         }
     }
 }

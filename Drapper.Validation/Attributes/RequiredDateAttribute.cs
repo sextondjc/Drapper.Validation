@@ -24,12 +24,12 @@ namespace Drapper.Validation.Attributes
         public RequiredDateAttribute()
         {
             // default to UTC. 
-            this.Options = UtcOnly;
+            Options = UtcOnly;
         }
 
         public RequiredDateAttribute(RequiredDateOptions options)
         {
-            this.Options = options;
+            Options = options;
         }
         
         public override bool IsValid(object value)
@@ -75,8 +75,7 @@ namespace Drapper.Validation.Attributes
                     break;
                 default:
                     // some crazy case which isn't supported.
-                    ErrorMessage = "The DateTime supplied did not pass validation. Please check that it meets supported validation rules.";
-                    result = false;
+                    ErrorMessage = "The DateTime supplied did not pass validation. Please check that it meets supported validation rules.";                    
                     break;
                 
             }

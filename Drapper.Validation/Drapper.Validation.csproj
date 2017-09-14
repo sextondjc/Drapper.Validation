@@ -14,6 +14,7 @@
     <PackageIconUrl></PackageIconUrl>
     <RepositoryUrl>https://github.com/sextondjc/Drapper.Validation</RepositoryUrl>
     <Description>A very simple precondition checker with very few dependencies and very little overhead. Inspired by CodeContracts, but nowhere near as feature rich.</Description>
+    <PackageReleaseNotes>Ported to netstandard 2.0.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

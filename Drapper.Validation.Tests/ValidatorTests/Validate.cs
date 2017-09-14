@@ -22,8 +22,7 @@ namespace Drapper.Validation.Tests.ValidatorTests
             var widget = new ValidatorWidget
             {
                 Name = "Pass"
-            };
-
+            };            
             Validate(widget);
         }
 

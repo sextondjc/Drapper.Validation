@@ -17,7 +17,7 @@ namespace Drapper.Validation
     /// A lightweight validation helper class which can be used to 
     /// perform model validation in repository classes.
     /// </summary>
-    public sealed class Validator
+    public static class Validator
     {
         /// <summary>
         /// Attempts to validate a model based on its property attributes.
@@ -42,17 +42,15 @@ namespace Drapper.Validation
                 validateAllProperties: true
             );
 
-            if (!isValid)
+            if (isValid) return;
+            // build up the validation error message. 
+            var builder = new StringBuilder();                
+            foreach (var result in results)
             {
-                // build up the validation error message. 
-                var builder = new StringBuilder();                
-                foreach (var result in results)
-                {
-                    builder.Append($"{result.ErrorMessage}\r\n");
-                }
-
-                throw new ValidationException(builder.ToString());
+                builder.Append($"{result.ErrorMessage}\r\n");
             }
+
+            throw new ValidationException(builder.ToString());
         }
 
         public static void ValidateCollection<T>(IEnumerable<T> items)

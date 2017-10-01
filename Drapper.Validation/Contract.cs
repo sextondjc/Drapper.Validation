@@ -11,17 +11,8 @@ namespace Drapper.Validation
     /// <summary>
     /// A simple precondition checker. Useful for validating method arguments. 
     /// </summary>
-    public class Contract
-    {
-        [Obsolete("This method will be removed in the next major release. Please use Require<T> for new development.")]
-        public static void Require(bool condition, string message, params object[] args)
-        {
-            if (!condition)
-            {
-                throw new ArgumentException(string.Format(message, args));
-            }
-        }
-
+    public static class Contract
+    {       
         /// <summary>
         /// Evaluates the supplied condition and throws exception on failure. 
         /// </summary>
@@ -31,10 +22,9 @@ namespace Drapper.Validation
         /// <param name="args">Any additional arguments to be part of the exception message.</param>
         public static void Require<TException>(bool condition, string message, params object[] args) where TException : Exception
         {
-            if (!condition)
-            {
-                throw Activator.CreateInstance(typeof(TException), string.Format(message, args)) as TException;
-            }
+            if (condition) return;
+            Require<ArgumentNullException>(!string.IsNullOrWhiteSpace(message), nameof(message));
+            throw (TException) Activator.CreateInstance(typeof(TException), string.Format(message, args));
         }
 
         /// <summary>
@@ -47,10 +37,9 @@ namespace Drapper.Validation
         /// <param name="args">Any additional arguments to be part of the exception message.</param>
         public static void Require<TException>(bool condition, string message, Exception innerException = null, params object[] args) where TException : Exception
         {
-            if (!condition)
-            {                
-                throw Activator.CreateInstance(typeof(TException), string.Format(message, args), innerException) as TException;
-            }
+            if (condition) return;
+            Require<ArgumentNullException>(!string.IsNullOrWhiteSpace(message), nameof(message));
+            throw (TException) Activator.CreateInstance(typeof(TException), string.Format(message, args), innerException);
         }
     }    
 }

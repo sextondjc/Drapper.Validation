@@ -25,7 +25,7 @@ namespace Drapper.Validation.Attributes
 
             if(value != null)
             {
-                if(value.GetType() == typeof(Guid))
+                if(value is Guid)
                 {
                     if(((Guid)value) != Guid.Empty)
                     {

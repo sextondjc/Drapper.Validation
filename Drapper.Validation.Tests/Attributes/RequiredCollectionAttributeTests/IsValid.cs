@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using Xunit;
 using static Xunit.Assert;
 
-
 namespace Drapper.Validation.Tests.Attributes.RequiredCollectionAttributeTests
 {    
     public class IsValid
